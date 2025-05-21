@@ -1,7 +1,7 @@
 # bukku-client
 
 [![npm version](https://badge.fury.io/js/bukku-client.svg)](https://badge.fury.io/js/bukku-client)
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Publish Package to npm](https://github.com/farhan-syah/bukku-client/actions/workflows/publish-npm.yml/badge.svg)](https://github.com/farhan-syah/bukku-client/actions/workflows/publish-npm.yml)
 
 A TypeScript client library for interacting with the Bukku REST API. This package aims to provide an easy way to integrate Bukku services into your Node.js or TypeScript projects.
@@ -92,7 +92,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the LGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
