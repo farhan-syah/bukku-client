@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/farhan-syah/bukku-client#readme",
   "devDependencies": {
+    "@types/node": "^22.15.21",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
     "@typescript-eslint/parser": "^8.32.1",
     "eslint": "^9.27.0",

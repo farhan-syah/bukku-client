@@ -49,7 +49,11 @@ jobs:
       - name: Verify package.json version (optional but recommended)
         run: |
           EXPECTED_VERSION="${{ steps.get_version.outputs.VERSION }}"
-          PACKAGE_JSON_VERSION=$(bun run -s node -p "require('./package.json').version") # Reads version using bun to execute node
+          # Use Bun to execute a simple JavaScript file that prints the version
+          echo "console.log(require('./package.json').version);" > get_pkg_version.js
+          PACKAGE_JSON_VERSION=$(bun run get_pkg_version.js)
+          rm get_pkg_version.js # Clean up the temporary file
+
           echo "Git Tag Version: $EXPECTED_VERSION"
           echo "package.json Version: $PACKAGE_JSON_VERSION"
           if [ "$EXPECTED_VERSION" != "$PACKAGE_JSON_VERSION" ]; then
