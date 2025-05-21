@@ -82,4 +82,3 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 ---
 
 _This is an unofficial client library for Bukku. Bukku is a trademark of its respective owners._
-_Replace `YOUR_USERNAME` and other placeholders with your actual information._
