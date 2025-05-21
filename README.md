@@ -38,6 +38,21 @@ const bukku = new BukkuClient({
 });
 ```
 
+## Example: Contact Creation
+
+```typescript
+const params: BukkuContactCreateParams = {
+  entity_type: "MALAYSIAN_INDIVIDUAL",
+  legal_name: "John Doe",
+  reg_no_type: "NRIC",
+  reg_no: "12345678",
+  email: "email@email.com",
+  types: ["customer"],
+};
+
+const contact = await bukku.contacts.contacts.create(params);
+```
+
 ## API Documentation
 
 This library aims to implement the functionalities exposed by the Bukku REST API. For detailed information about the API endpoints, request/response structures, and authentication, please refer to the official Bukku API Documentation:
