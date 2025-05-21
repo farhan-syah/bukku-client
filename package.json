@@ -36,7 +36,8 @@
   "files": [
     "dist",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "INTENT.md"
   ],
   "engines": {
     "node": ">=16"
