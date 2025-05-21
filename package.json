@@ -1,6 +1,6 @@
 {
   "name": "bukku-client",
-  "version": "0.1.0",
+  "version": "0.1.0-test.0",
   "description": "TypeScript client for the Bukku REST API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
