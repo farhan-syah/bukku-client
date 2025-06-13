@@ -171,7 +171,7 @@ export interface BukkuContactFileResponseItem {
 export interface BukkuContact {
   id: number;
   billing_first_name: string | null; // Derived from default billing contact person
-  billing_last_name: string | null;  // Derived from default billing contact person
+  billing_last_name: string | null; // Derived from default billing contact person
   shipping_first_name: string | null; // Derived from default shipping contact person
   shipping_last_name: string | null; // Derived from default shipping contact person
   contact_persons: BukkuContactPersonResponse[] | null;
@@ -223,22 +223,28 @@ export interface BukkuContactResponse {
 /**
  * Contact Person details for updating a contact. ID is required if updating an existing person.
  */
-export interface BukkuContactPersonUpdateParams extends BukkuContactPersonCreateParams {
+export interface BukkuContactPersonUpdateParams
+  extends BukkuContactPersonCreateParams {
   id?: number; // Required to update an existing contact person
 }
 
 /**
  * Custom Field details for updating a contact. ID is required if updating an existing field value.
  */
-export interface BukkuContactCustomFieldUpdateParams extends BukkuContactCustomFieldCreateParams {
+export interface BukkuContactCustomFieldUpdateParams
+  extends BukkuContactCustomFieldCreateParams {
   id?: number; // Required to update an existing custom field value for the contact
 }
 
 /**
  * Address details for updating a contact. ID is required.
  */
-export interface BukkuContactAddressUpdateParams extends BukkuContactAddressCreateParams {
-  id: number; // Required to update an existing address
+export interface BukkuContactAddressUpdateParams
+  extends BukkuContactAddressCreateParams {
+  /**
+   * ID for updating existing address. If omitted, new addresses will be added.
+   */
+  id?: number;
 }
 
 /**

@@ -183,7 +183,6 @@ export class BukkuClient {
 
     try {
       const response = await this.fetchImplementation(url.toString(), config);
-
       if (!response.ok) {
         // Attempt to parse error response, but don't fail if it's not JSON
         let errorData;
