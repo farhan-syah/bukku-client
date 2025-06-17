@@ -96,7 +96,7 @@ export interface BukkuInvoiceCreateParams {
  */
 export interface BukkuInvoiceFormItem {
   id: number;
-  type: string | null; // Assuming type can be null from sample context
+  type: "bundle" | "subtitle" | "subtotal" | null; // Assuming type can be null from sample context
   line: number;
   account_id: number;
   account_name: string;
@@ -345,6 +345,7 @@ export interface BukkuInvoiceListApiResponse {
  * 'number' becomes a required field.
  */
 export interface BukkuInvoiceUpdateParams {
+  payment_mode: "cash" | "credit";
   contact_id: number;
   number: string; // Required for update
   number2?: string;
