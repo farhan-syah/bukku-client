@@ -76,6 +76,7 @@ export interface BukkuSalesOrder {
   id: number;
   contact_id: number;
   contact_name?: string;
+  contact_code: string;
   number?: string;
   number2?: string;
   date: string; // YYYY-MM-DD
@@ -209,6 +210,7 @@ export interface BukkuSalesOrderListItem {
   number2?: string;
   contact_id: number;
   contact_name?: string;
+  contact_code: string;
   contact_email?: string; // Assuming this might be present like in quotations
   date: string; // YYYY-MM-DD
   billing_party?: string;

@@ -98,6 +98,7 @@ export interface BukkuQuotation {
   id: number;
   contact_id: number;
   contact_name?: string;
+  contact_code: string;
   number?: string;
   number2?: string;
   date: string; // YYYY-MM-DD
@@ -193,6 +194,7 @@ export interface BukkuQuotationListItem {
   number2?: string;
   contact_id: number;
   contact_name?: string;
+  contact_code: string;
   contact_email?: string;
   date: string; // YYYY-MM-DD
   billing_party?: string;

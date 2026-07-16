@@ -74,6 +74,7 @@ export interface BukkuPurchaseOrder {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null; // Sample response shows string, but can be null if not provided
   date: string; // YYYY-MM-DD
@@ -187,6 +188,7 @@ export interface BukkuPurchaseOrderListItem {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null;
   date: string; // YYYY-MM-DD

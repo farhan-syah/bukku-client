@@ -127,7 +127,7 @@ export class BukkuClient {
     // Validate apiBaseUrl
     try {
       new URL(this.apiBaseUrl);
-    } catch (error) {
+    } catch {
       throw new Error(
         `Invalid apiBaseUrl: ${this.apiBaseUrl}. It must be a valid URL.`,
       );
@@ -188,7 +188,7 @@ export class BukkuClient {
         let errorData;
         try {
           errorData = await response.json();
-        } catch (e) {
+        } catch {
           // If response is not JSON, use text
           errorData = await response.text();
         }

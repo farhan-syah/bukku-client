@@ -200,6 +200,7 @@ export interface BukkuInvoice {
   payment_mode: "cash" | "credit";
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string;
   date: string; // YYYY-MM-DD
@@ -294,6 +295,7 @@ export interface BukkuInvoiceListItem {
   number2: string;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   contact_email: string;
   date: string; // YYYY-MM-DD
   billing_party: string;
@@ -341,7 +343,6 @@ export interface BukkuInvoiceListApiResponse {
 /**
  * Parameters for updating a Bukku Invoice.
  * Based on PUT /sales/invoices/{transactionId}
- * 'status' and 'payment_mode' are typically not updatable via this kind of request.
  * 'number' becomes a required field.
  */
 export interface BukkuInvoiceUpdateParams {

@@ -2,8 +2,6 @@
 
 import {
   BukkuListPagination,
-  BukkuFileAttachment, // Re-evaluate if this is best for create params
-  BukkuAttachedFileResponse, // Re-evaluate for response files
 } from "../../common/type";
 
 // --- Enums for stricter type checking ---
@@ -69,6 +67,15 @@ export interface BukkuContactFileItemParams {
  */
 export interface BukkuContactCreateParams {
   entity_type: BukkuContactEntityType;
+  /**
+   * Unique code identifying the contact. Required as of 2 Jul 2026 (staging) /
+   * 23 Jul 2026 (production); POST /contacts without it no longer passes
+   * validation. Max 15 chars, allowed characters A-Z, 0-9, `_` and `-`, and
+   * must be unique across your contacts. Bukku's auto-suggested format is
+   * `C-` + a 1-char prefix from the contact's name + a 4-digit running number
+   * (e.g. `C-A0001`).
+   */
+  contact_code: string; // <= 15 chars, [A-Z0-9_-], unique
   legal_name: string; // <= 100 chars
   other_name?: string; // <= 100 chars
   reg_no_type?: BukkuContactRegNoType;
@@ -170,6 +177,7 @@ export interface BukkuContactFileResponseItem {
  */
 export interface BukkuContact {
   id: number;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   billing_first_name: string | null; // Derived from default billing contact person
   billing_last_name: string | null; // Derived from default billing contact person
   shipping_first_name: string | null; // Derived from default shipping contact person
@@ -253,6 +261,13 @@ export interface BukkuContactAddressUpdateParams
  */
 export interface BukkuContactUpdateParams {
   entity_type: BukkuContactEntityType; // Required
+  /**
+   * Unique code identifying the contact. Required as of 2 Jul 2026 (staging) /
+   * 23 Jul 2026 (production); PUT /contacts/{id} without it no longer passes
+   * validation. Max 15 chars, allowed characters A-Z, 0-9, `_` and `-`, unique
+   * across your contacts. Pass the contact's existing `contact_code` to keep it.
+   */
+  contact_code: string; // <= 15 chars, [A-Z0-9_-], unique
   legal_name: string; // Required
   other_name?: string;
   reg_no_type?: BukkuContactRegNoType;
@@ -319,6 +334,7 @@ export interface BukkuContactListParams {
  */
 export interface BukkuContactListItem {
   id: number;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   entity_type: BukkuContactEntityType;
   legal_name: string;
   other_name: string | null;

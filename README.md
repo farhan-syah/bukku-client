@@ -41,17 +41,20 @@ const bukku = new BukkuClient({
 ## Example: Contact Creation
 
 ```typescript
-const params: BukkuContactCreateParams = {
+const contact = await bukku.contacts.contacts.create({
   entity_type: "MALAYSIAN_INDIVIDUAL",
+  contact_code: "C-D0001",
   legal_name: "John Doe",
   reg_no_type: "NRIC",
   reg_no: "12345678",
   email: "email@email.com",
   types: ["customer"],
-};
-
-const contact = await bukku.contacts.contacts.create(params);
+});
 ```
+
+`contact_code` is required when creating or updating a contact from 2 July 2026 on staging and 23 July 2026 in production. Existing contacts require no action: Bukku automatically populates their codes, which you may update to your preferred format. The code must be unique across your contacts, contain no more than 15 characters, and use only uppercase letters (`A-Z`), numbers (`0-9`), `_`, or `-`. When updating a contact, pass its existing `contact_code` to keep the same code. Bukku's suggested format is `C-` followed by a one-character name prefix and a four-digit running number, such as `C-A0001`.
+
+The code is returned in all contact responses, Sales, Purchases, Bank, and Contacts list responses.
 
 ## API Documentation
 
@@ -75,6 +78,12 @@ To get started with development:
 2.  Install dependencies:
     ```bash
     bun install
+    ```
+3.  Run the same validation used by CI:
+    ```bash
+    bun run lint
+    bun run typecheck
+    bun run build
     ```
 
 ## Contributing

@@ -89,6 +89,7 @@ export interface BukkuCreditNote {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null;
   date: string; // YYYY-MM-DD
@@ -201,6 +202,7 @@ export interface BukkuCreditNoteListItem {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null;
   date: string; // YYYY-MM-DD

@@ -1,7 +1,6 @@
 // src/purchases/bills/type.ts
 
 import {
-  BukkuEmailDetails, // Assuming this might be needed for update/create later
   BukkuFileAttachment, // For create/update
   BukkuAttachedFileResponse, // For response
   BukkuListPagination,
@@ -125,6 +124,7 @@ export interface BukkuBill {
   payment_mode: "cash" | "credit" | "claim";
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   contact2_id: number | null;
   contact2_name: string | null;
   number: string;
@@ -251,6 +251,7 @@ export interface BukkuBillListItem {
   payment_mode: string; // "cash", "credit", "claim"
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   contact2_name?: string | null;
   number: string;
   number2: string | null;

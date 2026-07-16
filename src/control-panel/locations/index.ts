@@ -4,7 +4,6 @@ import {
   BukkuLocationCreateParams,
   BukkuLocationResponse,
   BukkuLocationListParams,
-  BukkuLocationListItem,
   BukkuLocationListApiResponse,
   BukkuLocationUpdateParams,
   BukkuLocationArchiveParams, // Ensured import

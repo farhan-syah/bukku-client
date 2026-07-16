@@ -77,6 +77,7 @@ export interface BukkuDeliveryOrder {
   id: number;
   contact_id: number;
   contact_name: string; // From sample
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string; // From sample
   number2?: string; // Optional in create, sample shows it
   date: string; // YYYY-MM-DD
@@ -220,8 +221,9 @@ export interface BukkuDeliveryOrderListItem {
   number2: string;
   contact_id: number;
   contact_name: string;
-  contact_email: string; 
-  date: string; 
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
+  contact_email: string;
+  date: string;
   billing_party: string;
   shipping_party: string;
   tag_names?: string[]; // Kept optional as it might not always be present or could be empty array

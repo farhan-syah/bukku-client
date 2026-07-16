@@ -5,7 +5,6 @@ import {
   BukkuFileAttachment,
   BukkuAttachedFileResponse,
   BukkuListPagination,
-  BukkuFormItem, // Though not directly in refund create, might appear in linked transactions or future detailed views
 } from "../../common/type";
 import { BukkuBillLinkedItem } from "../bills/type"; // For linked_items in response, assuming similar structure
 
@@ -91,6 +90,7 @@ export interface BukkuRefund {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   date: string; // YYYY-MM-DD
   currency_code: string;
   currency_symbol: string;
@@ -185,6 +185,7 @@ export interface BukkuRefundListItem {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null;
   date: string; // YYYY-MM-DD

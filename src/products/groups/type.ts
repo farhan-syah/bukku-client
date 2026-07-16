@@ -1,7 +1,5 @@
 // bukku/src/products/groups/type.ts
 
-import { BukkuListPagination } from "../../common/type";
-
 /**
  * Parameters for creating a new Product Group.
  * Based on POST /products/groups

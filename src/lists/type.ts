@@ -713,6 +713,7 @@ export interface GetListsRequestBody {
  */
 export interface ContactItem {
   id: number;
+  contact_code: string;
   legal_name: string;
   other_name: string | null;
   reg_no: string | null;

@@ -141,6 +141,7 @@ export interface BukkuPayment {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   date: string; // YYYY-MM-DD
   currency_code: string;
   currency_symbol: string;
@@ -259,6 +260,7 @@ export interface BukkuPaymentListItem {
   number2?: string | null;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   contact_email?: string; // Assuming this might be available
   date: string; // YYYY-MM-DD
   currency_code: string;

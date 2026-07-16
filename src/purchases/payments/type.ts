@@ -5,7 +5,6 @@ import {
   BukkuFileAttachment,
   BukkuAttachedFileResponse,
   BukkuListPagination,
-  BukkuFormItem, // Assuming this might be needed if payments can be linked to form items in detail views
 } from "../../common/type";
 import { BukkuBillLinkedItem } from "../bills/type"; // For linked_items in response
 
@@ -90,6 +89,7 @@ export interface BukkuPayment {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   date: string; // YYYY-MM-DD
   currency_code: string;
   currency_symbol: string;
@@ -185,6 +185,7 @@ export interface BukkuPaymentListItem {
   id: number;
   contact_id: number;
   contact_name: string;
+  contact_code: string; // Unique code identifying the contact, e.g. "C-A0001"
   number: string;
   number2: string | null;
   date: string; // YYYY-MM-DD
